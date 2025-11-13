@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Practice</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_profile1">ProfileActivity1</string>
+    <string name="title_activity_profile2">ProfileActivity2</string>
+    <string name="title_activity_spotify">SpotifyActivity</string>
+    <string name="title_activity_card">CardActivity</string>
 </resources>
