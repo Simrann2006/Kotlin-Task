@@ -12,6 +12,72 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practice">
         <activity
+            android:name=".ProductActivity"
+            android:exported="true"
+            android:label="@string/title_activity_product"
+            android:theme="@style/Theme.Practice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ForgotActivity"
+            android:exported="true"
+            android:label="@string/title_activity_forgot"
+            android:theme="@style/Theme.Practice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.Practice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/Theme.Practice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_registration"
+            android:theme="@style/Theme.Practice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.Practice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".CardActivity"
             android:exported="true"
             android:label="@string/title_activity_card"
@@ -34,52 +100,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileActivity2"
-            android:exported="true"
-            android:label="@string/title_activity_profile2"
-            android:theme="@style/Theme.Practice">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ProfileActivity1"
-            android:exported="false"
-            android:label="@string/title_activity_profile1"
-            android:theme="@style/Theme.Practice" />
-        <activity
-            android:name=".DashboardActivity"
-            android:exported="true"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/Theme.Practice">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".ProfileActivity"
             android:exported="true"
             android:label="ProfileActivity"
-            android:theme="@style/Theme.Practice">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Practice" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Practice">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
