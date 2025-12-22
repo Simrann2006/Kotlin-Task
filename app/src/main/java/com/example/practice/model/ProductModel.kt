@@ -1,7 +1,7 @@
 package com.example.practice.model
 
 data class ProductModel(
-    val productId : String = "",
+    var productId : String = "",
     val productName : String = "",
     val price : String = "",
     val description : String = "",

@@ -1,6 +1,7 @@
 package com.example.practice
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -47,8 +48,9 @@ class DashboardActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashBoardBody(){
-//    val context = LocalContext.current
-//    val activity = context as Activity
+
+    val context = LocalContext.current
+    val activity = context as Activity
 
     data class NavItem(val label : String, val icon : Int)
 
@@ -66,7 +68,12 @@ fun DashBoardBody(){
 
     Scaffold (
         floatingActionButton = {
-            FloatingActionButton(onClick = {}, containerColor = Blue) {
+            FloatingActionButton(onClick = {
+                val intent = Intent(
+                    context,
+                    ProductActivity::class.java)
+                context.startActivity(intent)
+            }, containerColor = Blue) {
                 Icon(Icons.Default.Add, contentDescription = null)
             }
         },

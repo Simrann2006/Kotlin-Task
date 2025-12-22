@@ -18,7 +18,9 @@ class ProductRepoImpl : ProductRepo {
         model: ProductModel,
         callback: (Boolean, String) -> Unit
     ) {
-        ref.child(model.productId).setValue(model).addOnCompleteListener {
+        val id = ref.push().key.toString()
+        model.productId = id
+        ref.child(id).setValue(model).addOnCompleteListener {
             if(it.isSuccessful){
                 callback(true,"Product added successfully")
             }else{

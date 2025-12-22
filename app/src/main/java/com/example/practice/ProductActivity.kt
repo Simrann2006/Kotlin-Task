@@ -6,12 +6,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -62,123 +62,125 @@ fun ProductBody(){
     val context = LocalContext.current
 
     Scaffold { padding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .background(White)
         ) {
-            Spacer(Modifier.height(60.dp))
+            item {
+                Spacer(Modifier.height(60.dp))
 
-            Text(
-                "Products",
-                modifier = Modifier
-                    .fillMaxWidth(),
-                style = TextStyle(
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Blue,
-                    textAlign = TextAlign.Center
-                )
-            )
-
-            OutlinedTextField(
-                value = productName,
-
-                onValueChange = { data ->
-                    productName = data
-                },
-                placeholder = {
-                    Text("Product Name")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 15.dp),
-                shape = RoundedCornerShape((15.dp)),
-                colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Light_grey1,
-                    unfocusedContainerColor = Light_grey1,
-                    focusedIndicatorColor = Blue,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
-            )
-
-            Spacer(Modifier.height(20.dp))
-
-            OutlinedTextField(
-                value = price,
-
-                onValueChange = { data ->
-                    price = data
-                },
-                placeholder = {
-                    Text("Price")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 15.dp),
-                shape = RoundedCornerShape((15.dp)),
-                colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Light_grey1,
-                    unfocusedContainerColor = Light_grey1,
-                    focusedIndicatorColor = Blue,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
-            )
-
-            Spacer(Modifier.height(20.dp))
-
-            OutlinedTextField(
-                value = description,
-
-                onValueChange = { data ->
-                    description = data
-                },
-                placeholder = {
-                    Text("Description")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 15.dp),
-                shape = RoundedCornerShape((15.dp)),
-                colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Light_grey1,
-                    unfocusedContainerColor = Light_grey1,
-                    focusedIndicatorColor = Blue,
-                    unfocusedIndicatorColor = Color.Transparent
-                )
-            )
-
-            Spacer(Modifier.height(25.dp))
-
-            Button(
-                onClick = {
-                    val model = ProductModel(
-                        productName = productName,
-                        price = price,
-                        description = description,
+                Text(
+                    "Products",
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    style = TextStyle(
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Blue,
+                        textAlign = TextAlign.Center
                     )
-                    productViewModel.addProduct(model){
-                        success, message ->
-                        if (success) {
-                            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-                        } else{
-                            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                )
+
+                OutlinedTextField(
+                    value = productName,
+
+                    onValueChange = { data ->
+                        productName = data
+                    },
+                    placeholder = {
+                        Text("Product Name")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 15.dp),
+                    shape = RoundedCornerShape((15.dp)),
+                    colors = TextFieldDefaults.colors(
+                        focusedContainerColor = Light_grey1,
+                        unfocusedContainerColor = Light_grey1,
+                        focusedIndicatorColor = Blue,
+                        unfocusedIndicatorColor = Color.Transparent
+                    )
+                )
+
+                Spacer(Modifier.height(20.dp))
+
+                OutlinedTextField(
+                    value = price,
+
+                    onValueChange = { data ->
+                        price = data
+                    },
+                    placeholder = {
+                        Text("Price")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 15.dp),
+                    shape = RoundedCornerShape((15.dp)),
+                    colors = TextFieldDefaults.colors(
+                        focusedContainerColor = Light_grey1,
+                        unfocusedContainerColor = Light_grey1,
+                        focusedIndicatorColor = Blue,
+                        unfocusedIndicatorColor = Color.Transparent
+                    )
+                )
+
+                Spacer(Modifier.height(20.dp))
+
+                OutlinedTextField(
+                    value = description,
+
+                    onValueChange = { data ->
+                        description = data
+                    },
+                    placeholder = {
+                        Text("Description")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 15.dp),
+                    shape = RoundedCornerShape((15.dp)),
+                    colors = TextFieldDefaults.colors(
+                        focusedContainerColor = Light_grey1,
+                        unfocusedContainerColor = Light_grey1,
+                        focusedIndicatorColor = Blue,
+                        unfocusedIndicatorColor = Color.Transparent
+                    )
+                )
+
+                Spacer(Modifier.height(25.dp))
+
+                Button(
+                    onClick = {
+                        val model = ProductModel(
+                            productName = productName,
+                            price = price,
+                            description = description
+                        )
+                        productViewModel.addProduct(model){
+                                success, message ->
+                            if (success) {
+                                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                            } else{
+                                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                            }
                         }
-                    }
-                },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Blue
-                ),
-                shape = RoundedCornerShape(12.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(55.dp)
-                    .padding(horizontal = 15.dp)
-            ) {
-                Text("Add product",style = TextStyle(
-                    fontSize = 16.sp
-                ))
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Blue
+                    ),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(55.dp)
+                        .padding(horizontal = 15.dp)
+                ) {
+                    Text("Add product",style = TextStyle(
+                        fontSize = 16.sp
+                    ))
+                }
             }
         }
     }
