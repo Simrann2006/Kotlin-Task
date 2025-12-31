@@ -5,7 +5,8 @@ data class ProductModel(
     val productName : String = "",
     val price : String = "",
     val description : String = "",
-    val categoryId : String = ""
+    val categoryId : String = "",
+    var image : String = ""
 ) {
     fun toMap() : Map<String, Any?> {
         return mapOf(

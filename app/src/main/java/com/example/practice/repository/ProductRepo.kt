@@ -1,5 +1,7 @@
 package com.example.practice.repository
 
+import android.content.Context
+import android.net.Uri
 import com.example.practice.model.ProductModel
 import com.google.firebase.auth.FirebaseUser
 
@@ -18,4 +20,8 @@ interface ProductRepo {
     fun getAllProduct(callback: (Boolean, String, List<ProductModel>?) -> Unit)
 
     fun getProductByCategory(categoryId:String,callback: (Boolean, String, List<ProductModel>?) -> Unit)
+
+    fun uploadImage(context: Context, imageUri: Uri,callback: (String?) -> Unit)
+
+    fun getFileNameFromUri(context: Context, imageUri: Uri) : String?
 }
